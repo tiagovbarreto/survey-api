@@ -1,0 +1,31 @@
+import { SignupController } from './signup'
+
+describe('Signup Controller', () => {
+  let httpRequest = {
+    body: {
+      name: 'some-name',
+      email: 'some-email',
+      password: 'some-password',
+      passwordConfirmation: 'password'
+    }
+  }
+
+  beforeEach(() => {
+    httpRequest = {
+      body: {
+        name: 'some-name',
+        email: 'some-email',
+        password: 'some-password',
+        passwordConfirmation: 'password'
+      }
+    }
+  })
+
+  test('should return 400 if no name is provided', () => {
+    const sut = new SignupController()
+    httpRequest.body.name = null
+
+    const httpResponse = sut.handle(httpRequest)
+    expect(httpResponse.statusCode).toBe(400)
+  })
+})
