@@ -1,7 +1,8 @@
+import { HttpRequest } from '../ports/http'
 import { SignupController } from './signup'
 
 describe('Signup Controller', () => {
-  let httpRequest = {
+  let httpRequest: HttpRequest = {
     body: {
       name: 'some-name',
       email: 'some-email',
