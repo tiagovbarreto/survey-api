@@ -28,14 +28,7 @@ const makeSut = (): SutTypes => {
 }
 
 describe('Signup Controller', () => {
-  let httpRequest: HttpRequest = {
-    body: {
-      name: 'some-name',
-      email: 'some-email@email.com',
-      password: 'some-password',
-      passwordConfirmation: 'password'
-    }
-  }
+  let httpRequest: HttpRequest = {}
 
   beforeEach(() => {
     httpRequest = {
