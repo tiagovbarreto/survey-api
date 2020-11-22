@@ -1,4 +1,4 @@
-import { HttpResponse } from '../ports/http'
+import { HttpResponse } from '../interfaces/http'
 
 export const badRequest = (error: Error): HttpResponse => {
   return {
