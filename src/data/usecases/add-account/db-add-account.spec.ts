@@ -7,14 +7,18 @@ describe('DBAddAccount UseCase', () => {
     encrypterStub: Encrypter;
   }
 
-  const makeSut = (): SutTypes => {
+  const makeEncrypter = (): Encrypter => {
     class EncrypterStub implements Encrypter {
       async encrypt (password: string): Promise<string> {
         return 'hashed-password'
       }
     }
 
-    const encrypterStub = new EncrypterStub()
+    return new EncrypterStub()
+  }
+
+  const makeSut = (): SutTypes => {
+    const encrypterStub = makeEncrypter()
     const sut = new DBAddAccount(encrypterStub)
     return {
       sut,
