@@ -57,7 +57,7 @@ const makeSut = (): SutTypes => {
 }
 
 describe('Signup Controller', () => {
-  let httpRequest: HttpRequest = {}
+  let httpRequest: HttpRequest
 
   beforeEach(() => {
     httpRequest = {
