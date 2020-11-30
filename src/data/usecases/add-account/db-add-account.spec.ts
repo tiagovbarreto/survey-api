@@ -73,7 +73,7 @@ describe('DBAddAccount UseCase', () => {
     const { sut, encrypterStub } = makeSut()
 
     jest.spyOn(encrypterStub, 'encrypt').mockImplementationOnce(() => {
-      return Promise.reject(new ServerError())
+      return Promise.reject(new ServerError(null))
     })
 
     const promise = sut.add(accountData)
@@ -96,7 +96,7 @@ describe('DBAddAccount UseCase', () => {
     const { sut, addAccountRepositoryStub } = makeSut()
 
     jest.spyOn(addAccountRepositoryStub, 'add').mockImplementationOnce(() => {
-      return Promise.reject(new ServerError())
+      return Promise.reject(new ServerError(null))
     })
 
     const promise = sut.add(accountData)
