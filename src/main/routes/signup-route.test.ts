@@ -5,8 +5,7 @@ import app from '../app'
 
 describe('signup route', () => {
   beforeAll(async () => {
-    const treta = await MongoHelper.connect(process.env.MONGO_URL)
-    console.log(treta)
+    await MongoHelper.connect(process.env.MONGO_URL)
   })
 
   beforeEach(async () => {
